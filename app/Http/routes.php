@@ -15,14 +15,8 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/blog',function () {
-    return view('blog');
-});
+Route::get('/blog','blogController@index');
 
-Route::get('/projects',function () {
-    return view('projects');
-});
+Route::get('/projects','projectController@index');
 
-Route::get('/future',function () {
-    return view('future');
-});
+Route::get('/future','futureController@index');

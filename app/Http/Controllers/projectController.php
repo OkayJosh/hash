@@ -51,6 +51,12 @@ class projectController extends Controller
         //
     }
 
+    public function showProjects()
+    {
+        //
+        return view('projects');
+    }
+
     /**
      * Show the form for editing the specified resource.
      *

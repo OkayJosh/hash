@@ -51,6 +51,11 @@ class futureController extends Controller
         //
     }
 
+    public function showFuture()
+    {
+        //
+        return view ('future');
+    }
     /**
      * Show the form for editing the specified resource.
      *
