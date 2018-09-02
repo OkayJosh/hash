@@ -20,7 +20,7 @@ class blogController extends Controller
         //
         $posts = Post::all();
 
-        return view('blog', ['posts' => $posts]);
+        return view('index.blog', ['posts' => $posts]);
     }
 
     /**

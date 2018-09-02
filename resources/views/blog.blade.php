@@ -62,11 +62,11 @@
         </style>
     </head>
     <body>
-    <li>
+    {% comment %} <li>
     @foreach ($posts as $post) {
     <ul>echo $post->name;</ul>
     @endforeach
-    </li>
+    </li> {% endcomment %}
 }
     </body>
 </html>
