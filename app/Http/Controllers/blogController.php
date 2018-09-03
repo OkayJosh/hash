@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Post;
+use DB;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
@@ -18,9 +19,11 @@ class blogController extends Controller
     public function index()
     {
         //
-        $posts = Post::all();
+        // $posts = Post::all();
+        // return view('blog', ['posts' => $posts]);
+        $posts = DB::table('blogPost')->get();
 
-        return view('index.blog', ['posts' => $posts]);
+        return view('blog');
     }
 
     /**
