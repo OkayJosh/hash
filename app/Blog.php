@@ -4,13 +4,13 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Post extends Model
+class Blog extends Model
 {
-    //
+        //
         /**
      * The database table used by the model.
      *
      * @var string
      */
-    protected $table = 'blogPost';
+    protected $table = 'blogs';
 }

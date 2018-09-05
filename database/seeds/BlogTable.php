@@ -2,7 +2,7 @@
 
 use Illuminate\Database\Seeder;
 
-class PostTableSeeder extends Seeder
+class BlogTable extends Seeder
 {
     /**
      * Run the database seeds.
@@ -12,9 +12,9 @@ class PostTableSeeder extends Seeder
     public function run()
     {
         //
-        DB::table('blogPost')->insert([
+        DB::table('blogs')->insert([
             'title' => str_random(100),
-            'content_of_post' => str_random(500),
+            'content_of_post' => str_random(),
         ]);
     }
 }

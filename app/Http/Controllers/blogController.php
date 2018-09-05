@@ -3,10 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Post;
-use DB;
+use App\Blog;
 
-use App\Http\Requests;
+use App\Http\Requests\BlogFormRequest;
 use App\Http\Controllers\Controller;
 
 class blogController extends Controller
@@ -19,11 +18,9 @@ class blogController extends Controller
     public function index()
     {
         //
-        // $posts = Post::all();
-        // return view('blog', ['posts' => $posts]);
-        $posts = DB::table('blogPost')->get();
+        $blogs = \App\Blog::all();
 
-        return view('blog');
+        return view('blog.index', ['blogs' => $blogs]);
     }
 
     /**
@@ -34,6 +31,8 @@ class blogController extends Controller
     public function create()
     {
         //
+        $this->middleware('auth');
+        return view('blog.create');
     }
 
     /**
@@ -45,6 +44,17 @@ class blogController extends Controller
     public function store(Request $request)
     {
         //
+
+        // $blog->title = request('title');
+        // $blog->content_of_post = request('content');
+        // // $blog->timestamps();
+        \App\Blog::create([
+            'title' => $request->get('title'),
+            'content_of_post' => $request->get('content'),
+          ]);
+        flash("You New Post has been saved")->success();
+
+          return redirect('blog/create');
     }
 
     /**
@@ -55,8 +65,9 @@ class blogController extends Controller
      */
     public function show($id)
     {
-        //
-       // return view('blog');
+        $blogs = \App\Blog::all();
+
+        return view('blog/show', ['blogs' => $blogs]);
     }
 
     /**
