@@ -5,7 +5,6 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Blog;
 
-use App\Http\Requests\BlogFormRequest;
 use App\Http\Controllers\Controller;
 
 class blogController extends Controller
@@ -18,9 +17,9 @@ class blogController extends Controller
     public function index()
     {
         //
-        $blogs = \App\Blog::all();
+        $blogs = Blog::all();
 
-        return view('blog.index', ['blogs' => $blogs]);
+        return view('blog.index')->with('blogs', $blogs);
     }
 
     /**
@@ -30,8 +29,7 @@ class blogController extends Controller
      */
     public function create()
     {
-        //
-        $this->middleware('auth');
+        //return View::make('blog.create');
         return view('blog.create');
     }
 
@@ -45,16 +43,16 @@ class blogController extends Controller
     {
         //
 
-        // $blog->title = request('title');
-        // $blog->content_of_post = request('content');
-        // // $blog->timestamps();
-        \App\Blog::create([
-            'title' => $request->get('title'),
-            'content_of_post' => $request->get('content'),
+        Blog::create([
+            'title'             => $request->get('title'),
+            'content_of_post'   => $request->get('content'),
           ]);
-        flash("You New Post has been saved")->success();
 
-          return redirect('blog/create');
+          $blogs = Blog::all();
+          \Session::flash('flash_message','successfully saved.');
+
+
+          return view('blog.index')->with('blogs', $blogs);
     }
 
     /**
@@ -65,9 +63,7 @@ class blogController extends Controller
      */
     public function show($id)
     {
-        $blogs = \App\Blog::all();
 
-        return view('blog/show', ['blogs' => $blogs]);
     }
 
     /**

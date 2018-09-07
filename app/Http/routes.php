@@ -16,3 +16,4 @@ Route::get('/', function () {
 });
 
 Route::resource('/blog', 'blogController');
+Route::put('/blog', 'blogController@store');

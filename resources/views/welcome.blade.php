@@ -2,9 +2,7 @@
 <html>
     <head>
         <title>Joshua</title>
-
-        <link href="https://fonts.googleapis.com/css?family=Lato:100" rel="stylesheet" type="text/css">
-
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
          <style>
             html, body {
                 background-color: #fff;
@@ -62,6 +60,23 @@
         </style>
     </head>
     <body>
+    <div class="container">
+    <div class="links justify-content-end">
+                        <ul class="nav justify-content-end">
+                        <li class="nav-item">
+                            <a class="nav-link" href="/blog">blog</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/projects">Projects</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="https://www.linkedin.com/in/joshua-olatunji-95524688/">LinkedIn</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="https://github.com/okayjosh">GitHub</a>
+                        </li>
+                        </ul>
+                    </div>
         <div class="flex-center position-ref full-height">
             <div class="container">
                 <div class="content">
@@ -81,14 +96,8 @@
                  providing a powerful tool that empowers the mind, seeing the future
                   from an optimistic position, and allowing us to take control of our 
                   own destiny as a specie. </h4> </div>
-                <div class="links flex-center">
-                        <a href="/blog">blog</a>
-                        <a href="/projects">Projects</a>
-                        <a href="/future">Futurist</a>
-                        <a href="https://www.linkedin.com/in/joshua-olatunji-95524688/">LinkedIn</a>
-                        <a href="https://github.com/okayjosh">GitHub</a>
-                </div>
             </div>
         </div>
+    </div>
     </body>
 </html>

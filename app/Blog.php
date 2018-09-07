@@ -13,4 +13,15 @@ class Blog extends Model
      * @var string
      */
     protected $table = 'blogs';
+    /**
+     * Fillable fields for a Profile.
+     *
+     * @var array
+     */
+    protected $fillable = [
+        'title',
+        'content_of_post',
+    ];
+
+    protected $dateFormat = 'U';
 }
