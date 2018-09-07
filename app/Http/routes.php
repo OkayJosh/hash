@@ -16,4 +16,4 @@ Route::get('/', function () {
 });
 
 Route::resource('/blog', 'blogController');
-Route::put('/blog', 'blogController@store');
+Route::resource('/Admin', 'AdminController');

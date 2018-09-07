@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
-class futureController extends Controller
+class AdminController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -17,6 +17,7 @@ class futureController extends Controller
     public function index()
     {
         //
+        return view('Admin');
     }
 
     /**
@@ -51,11 +52,6 @@ class futureController extends Controller
         //
     }
 
-    public function showFuture()
-    {
-        //
-        return view ('future');
-    }
     /**
      * Show the form for editing the specified resource.
      *
