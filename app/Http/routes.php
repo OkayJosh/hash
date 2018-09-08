@@ -15,5 +15,5 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::resource('/blog', 'blogController');
+Route::get('/blog', 'blogController@index');
 Route::resource('/Admin', 'AdminController');
